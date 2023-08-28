@@ -1,3 +1,23 @@
 import pandas as pd
 import matplotlib.pyplot as mlt
 import streamlit as st
+import operating system as os
+
+dataset_path = '"C:\Users\chiku\OneDrive\Documents\titanic.csv"'
+data = pd.read_csv(dataset_path)
+
+st.set_page_config(layout="wide", page_title="Titanic dataset",)
+st.write= (data)
+
+fig, ax = plt.subplots()
+ax.hist(data, bins=20, alpha=0.5, color='blue')
+
+# Set plot labels and title
+ax.set_xlabel('fare')
+ax.set_ylabel('Frequency')
+ax.set_title('Histogram Example')
+
+# Display the histogram using Streamlit's magic command
+st.pyplot(fig)
+
+
